@@ -19,10 +19,10 @@
     window.trackButtonClick2 = function() {
         var inputField = document.getElementById('aliasInput');
         if(inputField.value !== '') {
+            analytics.alias(inputField.value);
             analytics.track('Button 2 clicked', {
                 title: 'The button 2 is a great button.',
             });
-            analytics.alias(inputField.value);
         } else {
             alert('Please enter a value in the text field before clicking the button.');
         }
