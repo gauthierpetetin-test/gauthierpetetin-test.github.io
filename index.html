@@ -10,7 +10,7 @@
     window.trackButtonClick1 = function() {
         var inputField = document.getElementById('identifyInput');
         if(inputField.value !== '') {
-            analytics.identify('f4ca124298', {
+            analytics.identify(inputField.value, {
                 name: 'Gauthier Petetin',
                 email: 'gauthierpetetin-test@example.com'
             });
