@@ -33,6 +33,12 @@
         }
     }
     }}();
+    window.trackButtonClick3 = function() {
+        analytics.track('Button 3 clicked', {
+            title: 'The button 3 is a great button.',
+        });
+    }
+    }}();
   </script>
 </head>
 <body>
@@ -40,5 +46,6 @@
     <button onclick="trackButtonClick1()">Click to call identify</button>
     <input type="text" id="aliasInput">
     <button onclick="trackButtonClick2()">Click to call alias</button>
+    <button onclick="trackButtonClick3()">Click to call track anonymously</button>
 </body>
 </html>
