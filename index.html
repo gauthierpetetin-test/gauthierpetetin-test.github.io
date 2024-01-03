@@ -11,5 +11,15 @@
         name: 'Michael Brown',
         email: 'mbrown@example.com'
     });
+    window.trackButtonClick = function() {
+        analytics.track('Button 1 clicked', {
+            title: 'The button 1 is a great button.',
+        });
+    }
     }}();
   </script>
+</head>
+<body>
+    <button onclick="trackButtonClick()">Click me</button>
+</body>
+</html>
