@@ -11,15 +11,28 @@
         name: 'Michael Brown',
         email: 'mbrown@example.com'
     });
-    window.trackButtonClick = function() {
+    window.trackButtonClick1 = function() {
         analytics.track('Button 1 clicked', {
             title: 'The button 1 is a great button.',
         });
+    }
+    window.trackButtonClick2 = function() {
+        var inputField = document.getElementById('aliasInput');
+        if(inputField.value !== '') {
+            analytics.track('Button 2 clicked', {
+                title: 'The button 2 is a great button.',
+            });
+            analytics.alias(inputField.value);
+        } else {
+            alert('Please enter a value in the text field before clicking the button.');
+        }
     }
     }}();
   </script>
 </head>
 <body>
-    <button onclick="trackButtonClick()">Click me</button>
+    <button onclick="trackButtonClick1()">Click me</button>
+    <input type="text" id="aliasInput">
+    <button onclick="trackButtonClick2()">Click me too</button>
 </body>
 </html>
