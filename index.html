@@ -15,18 +15,24 @@
                 email: 'gauthierpetetin-test@example.com'
             });
             analytics.track('Identify button clicked', {
-                title: 'The button 1 is a great button.',
+                title: 'Identify is a great button.',
             });
         } else {
             alert('Please enter a value in the text field before clicking the button.');
         }
     }
     window.trackButtonClick2 = function() {
-        var inputField = document.getElementById('aliasInput');
-        if(inputField.value !== '') {
-            analytics.alias(inputField.value);
+        var inputField1 = document.getElementById('aliasInput1');
+        if(inputField1.value !== '') {
+            var inputField2 = document.getElementById('aliasInput2');
+            if(inputField2.value !== '') {
+                analytics.alias(inputField1.value, inputField2.value);
+            } else {
+                analytics.alias(inputField1.value);
+            }
+            
             analytics.track('Alias button clicked', {
-                title: 'The button 2 is a great button.',
+                title: 'Alias is a great button.',
             });
         } else {
             alert('Please enter a value in the text field before clicking the button.');
@@ -34,17 +40,27 @@
     }
     window.trackButtonClick3 = function() {
         analytics.track('Track button clicked', {
-            title: 'The button 3 is a great button.',
+            title: 'Track is a great button.',
         });
     }
     }}();
   </script>
 </head>
 <body>
-    <input type="text" id="identifyInput">
-    <button onclick="trackButtonClick1()">Click to call identify</button>
-    <input type="text" id="aliasInput">
-    <button onclick="trackButtonClick2()">Click to call alias</button>
-    <button onclick="trackButtonClick3()">Click to call track</button>
+    <div>
+        <h2>Identify user</h2>
+        <input type="text" id="identifyInput" placeholder="userId">
+        <button onclick="trackButtonClick1()">Click to call identify</button>
+    </div>
+    <div>
+        <h2>Alias</h2>
+        <input type="text" id="aliasInput1" placeholder="userId">
+        <input type="text" id="aliasInput2" placeholder="previousId (optional)">
+        <button onclick="trackButtonClick2()">Click to call alias</button>
+    </div>
+    <div>
+        <h2>Track event</h2>
+        <button onclick="trackButtonClick3()">Click to call track</button>
+    </div>
 </body>
 </html>
