@@ -14,7 +14,7 @@
                 name: 'Gauthier Petetin',
                 email: 'gauthierpetetin-test@example.com'
             });
-            analytics.track('Button 1 clicked', {
+            analytics.track('Identify button clicked', {
                 title: 'The button 1 is a great button.',
             });
         } else {
@@ -25,7 +25,7 @@
         var inputField = document.getElementById('aliasInput');
         if(inputField.value !== '') {
             analytics.alias(inputField.value);
-            analytics.track('Button 2 clicked', {
+            analytics.track('Alias button clicked', {
                 title: 'The button 2 is a great button.',
             });
         } else {
@@ -33,7 +33,7 @@
         }
     }
     window.trackButtonClick3 = function() {
-        analytics.track('Button 3 clicked', {
+        analytics.track('Track button clicked', {
             title: 'The button 3 is a great button.',
         });
     }
@@ -45,6 +45,6 @@
     <button onclick="trackButtonClick1()">Click to call identify</button>
     <input type="text" id="aliasInput">
     <button onclick="trackButtonClick2()">Click to call alias</button>
-    <button onclick="trackButtonClick3()">Click to call track anonymously</button>
+    <button onclick="trackButtonClick3()">Click to call track</button>
 </body>
 </html>
